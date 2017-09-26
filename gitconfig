@@ -1,0 +1,11 @@
+[color]
+	ui = true
+[user]
+	name = Nate Emerson
+	email = emerson.nate@gmail.com
+[credential]
+	helper = osxkeychain
+[diff "blackbox"]
+	textconv = gpg --use-agent -q --batch --decrypt
+[core]
+	excludesfile = ~/.gitignore
