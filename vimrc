@@ -25,7 +25,7 @@ filetype plugin indent on
 
 " Basics
 syntax enable
-set number
+set backspace=2
 set nowrap
 "set list listchars=trail:- " show trailing spaces?
 set updatetime=750
@@ -36,6 +36,16 @@ set shiftwidth=2
 set smarttab
 set expandtab
 set cursorline
+
+" Relative line numbers
+set number relativenumber
+set numberwidth=4
+" Disable/Enable relative line numbers
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Natural Split Opening
 set splitbelow
