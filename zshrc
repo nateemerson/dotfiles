@@ -1,3 +1,8 @@
+# load custom executable functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # doesn't work
