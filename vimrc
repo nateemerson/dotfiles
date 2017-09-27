@@ -27,7 +27,7 @@ filetype plugin indent on
 syntax enable
 set backspace=2
 set nowrap
-"set list listchars=trail:- " show trailing spaces?
+set list listchars=tab:»·,trail:·,nbsp:·
 set updatetime=750
 
 " Set Proper Tabs
