@@ -47,6 +47,11 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+" Ruby performance fix for Vim 8.0, see:
+"   https://github.com/vim/vim/issues/282
+"   https://github.com/vim-ruby/vim-ruby/issues/243
+set regexpengine=1
+
 " Natural Split Opening
 set splitbelow
 set splitright
