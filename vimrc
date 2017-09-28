@@ -63,6 +63,14 @@ set regexpengine=1
 set background=dark
 colorscheme solarized
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" via Thoughtbot dotfiles
+if executable ('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_use_caching = 0
+endif
+
 " Remaps
 
 " Toggle off search highlighting
