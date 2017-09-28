@@ -62,7 +62,6 @@ colorscheme solarized
 
 " Remaps
 silent! nmap <C-n> :NERDTreeToggle<CR>
-silent! nmap <C-f> :NERDTreeFind<CR>
 silent! nnoremap <C-m> :TagbarToggle<CR>
 silent! nnoremap <leader>m :TagbarOpenAutoClose<CR>
 let g:NERDTreeMapPreview="<C-o>"
