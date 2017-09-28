@@ -29,6 +29,8 @@ set backspace=2
 set nowrap
 set list listchars=tab:»·,trail:·,nbsp:·
 set updatetime=750
+set wildmenu
+set cursorline
 
 " Set Proper Tabs
 set tabstop=2
@@ -37,9 +39,14 @@ set smarttab
 set expandtab
 set cursorline
 
+" Searching
+set incsearch
+set hlsearch
+
 " Relative line numbers
 set number relativenumber
 set numberwidth=4
+
 " Disable/Enable relative line numbers
 augroup numbertoggle
   autocmd!
@@ -52,15 +59,15 @@ augroup END
 "   https://github.com/vim-ruby/vim-ruby/issues/243
 set regexpengine=1
 
-" Natural Split Opening
-set splitbelow
-set splitright
-
 " Theme
 set background=dark
 colorscheme solarized
 
 " Remaps
+
+" Toggle off search highlighting
+silent! nnoremap <leader>/ :nohlsearch<CR>
+" Plugin Remaps
 silent! nmap <C-n> :NERDTreeToggle<CR>
 silent! nnoremap <C-m> :TagbarToggle<CR>
 silent! nnoremap <leader>m :TagbarOpenAutoClose<CR>
