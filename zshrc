@@ -31,3 +31,12 @@ bindkey '^ ' autosuggest-accept
 
 export PATH=$PATH:~/Code/ecs_config/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+# COMPLETION SETTINGS
+# Via (https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/)
+# add custom completion scripts
+fpath=($fpath ~/.zsh/completion)
+
+# compsys initialization
+autoload -U compinit
+compinit
