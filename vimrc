@@ -1,6 +1,9 @@
 " Required by Vundle
 set nocompatible
 filetype off
+
+let g:has_async = v:version >= 800 || has('nvim')
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,13 +21,14 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'w0rp/ale'
+
+if g:has_async
+  Plugin 'w0rp/ale'
+endif
 
 " Plugins must be added before following line
 call vundle#end()
 filetype plugin indent on
-
-let g:has_async = v:version >= 800 || has('nvim')
 
 " Basics
 syntax enable
