@@ -24,6 +24,8 @@ Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
+let g:has_async = v:version >= 800 || has('nvim')
+
 " Basics
 syntax enable
 set backspace=2
