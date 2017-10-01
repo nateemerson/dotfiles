@@ -18,6 +18,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'w0rp/ale'
 
 " Plugins must be added before following line
 call vundle#end()
@@ -52,6 +53,23 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+augroup vimrcEx
+  autocmd!
+
+  " ALE linting events
+  " vi https://github.com/thoughtbot/dotfiles/commit/8ac75ba56b6ad6eb8134283ca3fb406067ed02b4
+  if g:has_async
+    set updatetime=1000
+    let g:ale_lint_on_text_changed = 0
+    autocmd CursorHold * call ale#Lint()
+    autocmd CursorHoldI * call ale#Lint()
+    autocmd InsertEnter * call ale#Lint()
+    autocmd InsertLeave * call ale#Lint()
+  else
+    echoerr "Neovim or Vim 8 required for ALE"
+  endif
 augroup END
 
 " Ruby performance fix for Vim 8.0, see:
