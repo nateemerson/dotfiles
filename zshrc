@@ -37,6 +37,7 @@ export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 # add custom completion scripts
 fpath=($fpath ~/.zsh/completion)
 
+export PATH=~/.bin:$PATH
 # compsys initialization
 autoload -U compinit
 compinit
