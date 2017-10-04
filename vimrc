@@ -21,6 +21,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-fugitive'
 
 if g:has_async
   Plugin 'w0rp/ale'
@@ -97,6 +98,9 @@ endif
 
 " Remaps
 
+" Basic remaps
+inoremap jk <ESC>
+let mapleader = "\<Space>"
 " Toggle off search highlighting
 silent! nnoremap <leader>/ :nohlsearch<CR>
 " Plugin Remaps
@@ -104,8 +108,10 @@ silent! nmap <C-n> :NERDTreeToggle<CR>
 silent! nnoremap <C-m> :TagbarToggle<CR>
 silent! nnoremap <leader>m :TagbarOpenAutoClose<CR>
 let g:NERDTreeMapPreview="<C-o>"
-inoremap jk <ESC>
-let mapleader = "\<Space>"
+silent! nmap <leader>gs :Gstatus<CR>
+silent! nmap <leader>ga :Gwrite<CR>
+silent! nmap <leader>gd :Gdiff<CR>
+silent! nmap <leader>gb :Gblame<CR>
 " Split remaps
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
