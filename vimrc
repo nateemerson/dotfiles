@@ -104,6 +104,8 @@ endif
 " Basic remaps
 inoremap jk <ESC>
 let mapleader = "\<Space>"
+vmap <leader>y "+y
+nnoremap <leader>q @q
 " Toggle off search highlighting
 silent! nnoremap <leader>/ :nohlsearch<CR>
 " Plugin Remaps
