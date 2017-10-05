@@ -38,6 +38,8 @@ export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 fpath=($fpath ~/.zsh/completion)
 
 export PATH=~/.bin:$PATH
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
 # compsys initialization
 autoload -U compinit
 compinit
