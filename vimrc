@@ -22,6 +22,9 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
 
 if g:has_async
   Plugin 'w0rp/ale'
