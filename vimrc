@@ -44,6 +44,9 @@ set updatetime=750
 set wildmenu
 set cursorline
 
+" Use OS clipboard
+set clipboard=unnamed
+
 " Set Proper Tabs
 set tabstop=2
 set shiftwidth=2
