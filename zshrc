@@ -40,6 +40,10 @@ fpath=($fpath ~/.zsh/completion)
 export PATH=~/.bin:$PATH
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
+
+# Tmuxinator completion
+source ~/.bin/tmuxinator.zsh
+
 # compsys initialization
 autoload -U compinit
 compinit
