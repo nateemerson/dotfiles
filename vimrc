@@ -97,11 +97,20 @@ colorscheme solarized
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " via Thoughtbot dotfiles
+" also https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable ('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
   let g:ctrlp_use_caching = 0
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  nnoremap \ :Ag<SPACE>
 endif
+
+" autocmd for opening vertical/horizontal splits from qf window
+" TODO: Figure out how to override <C-v> for qf
+" autocmd! FileType qf nnoremap <C-v> <Nop>
+" autocmd! FileType qf nnoremap <buffer> <C-v> <C-w><Enter><C-w>L
+autocmd! FileType qf nnoremap <buffer> <C-x> <C-w><Enter>
 
 " Remaps
 
@@ -110,11 +119,13 @@ inoremap jk <ESC>
 let mapleader = "\<Space>"
 vmap <leader>y "+y
 nnoremap <leader>q @q
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Toggle off search highlighting
 silent! nnoremap <leader>/ :nohlsearch<CR>
 " Plugin Remaps
 silent! nmap <C-n> :NERDTreeToggle<CR>
-silent! nnoremap <C-m> :TagbarToggle<CR>
+silent! nnoremap <C-b> :TagbarToggle<CR>
 silent! nnoremap <leader>m :TagbarOpenAutoClose<CR>
 let g:NERDTreeMapPreview="<C-o>"
 silent! nmap <leader>gs :Gstatus<CR>
