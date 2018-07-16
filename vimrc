@@ -26,6 +26,8 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 if g:has_async
   Plugin 'w0rp/ale'
@@ -94,6 +96,7 @@ set regexpengine=1
 " Theme
 set background=dark
 colorscheme solarized
+let g:airline_solarized_bg='dark'
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " via Thoughtbot dotfiles
