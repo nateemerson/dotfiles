@@ -28,6 +28,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'pangloss/vim-javascript'
 
 if g:has_async
   Plugin 'w0rp/ale'
@@ -59,6 +60,9 @@ set cursorline
 " Searching
 set incsearch
 set hlsearch
+
+" Set path for file searching
+set path+=**
 
 " Relative line numbers
 set number relativenumber
