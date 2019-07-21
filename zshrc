@@ -20,7 +20,8 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 source /usr/local/share/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme avit
+export ZSH_THEME="avit"
 # Syntax highlighting supposed to go at the end
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
@@ -31,8 +32,10 @@ bindkey '^ ' autosuggest-accept
 
 export PATH=$PATH:~/Code/ecs_config/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+# Add Mysql libraries to path
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-# COMPLETION SETTINGS
+ #COMPLETION SETTINGS
 # Via (https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/)
 # add custom completion scripts
 fpath=($fpath ~/.zsh/completion)
