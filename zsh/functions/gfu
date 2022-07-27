@@ -1,0 +1,6 @@
+# No arguments: `git fetch upstream`
+# Credit: nateemerson
+# (https://github.com/nateemerson/dotfiles/blob/master/zsh/functions/gfu)
+gfu() {
+  git fetch upstream
+}

@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -8,20 +15,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # doesn't work
 # complete -C aws_completer aws
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE='nerdfont-complete'
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme avit
-export ZSH_THEME="avit"
+antigen theme romkatv/powerlevel10k
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 # Syntax highlighting supposed to go at the end
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
@@ -30,10 +28,8 @@ antigen apply
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 bindkey '^ ' autosuggest-accept
 
-export PATH=$PATH:~/Code/ecs_config/bin
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-# Add Mysql libraries to path
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 
  #COMPLETION SETTINGS
 # Via (https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/)
@@ -41,8 +37,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 fpath=($fpath ~/.zsh/completion)
 
 export PATH=~/.bin:$PATH
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
 # Tmuxinator completion
 source ~/.bin/tmuxinator.zsh
@@ -50,3 +46,6 @@ source ~/.bin/tmuxinator.zsh
 # compsys initialization
 autoload -U compinit
 compinit
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

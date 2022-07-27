@@ -1,0 +1,6 @@
+# No arguments: `git push origin`
+# Credit: nateemerson
+# (https://github.com/nateemerson/dotfiles/blob/master/zsh/functions/gpo)
+gpo() {
+  git push origin
+}

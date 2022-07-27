@@ -29,10 +29,8 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pangloss/vim-javascript'
+Plugin 'dense-analysis/ale'
 
-if g:has_async
-  Plugin 'w0rp/ale'
-endif
 
 " Plugins must be added before following line
 call vundle#end()
@@ -78,18 +76,6 @@ augroup END
 augroup vimrcEx
   autocmd!
 
-  " ALE linting events
-  " vi https://github.com/thoughtbot/dotfiles/commit/8ac75ba56b6ad6eb8134283ca3fb406067ed02b4
-  if g:has_async
-    set updatetime=1000
-    let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Lint()
-    autocmd CursorHoldI * call ale#Lint()
-    autocmd InsertEnter * call ale#Lint()
-    autocmd InsertLeave * call ale#Lint()
-  else
-    echoerr "Neovim or Vim 8 required for ALE"
-  endif
 augroup END
 
 " Ruby performance fix for Vim 8.0, see:
