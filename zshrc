@@ -10,12 +10,9 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# doesn't work
-# complete -C aws_completer aws
 
-source /opt/homebrew/share/antigen/antigen.zsh
+source ~/.bin/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen theme romkatv/powerlevel10k
@@ -26,10 +23,6 @@ antigen apply
 
 # Autosuggest config
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-bindkey '^ ' autosuggest-accept
-
-export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 
  #COMPLETION SETTINGS
 # Via (https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/)
@@ -37,11 +30,12 @@ export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 fpath=($fpath ~/.zsh/completion)
 
 export PATH=~/.bin:$PATH
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
+export XDG_CONFIG_HOME=~/.config
 
 # Tmuxinator completion
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
 
 # compsys initialization
 autoload -U compinit
@@ -49,3 +43,9 @@ compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias vim=nvim
