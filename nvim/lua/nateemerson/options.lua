@@ -1,9 +1,16 @@
 -- Credit to @ThePrimeagen and @k1ng440
 
 local options = {
+  backup = false,
+
+  undofile = true,
+  undodir = os.getenv("HOME") .. "/.vim/undodir",
+
+  writebackup = false,
+  clipboard = "unnamedplus",
   nu = true,
+  rnu = true,
   cursorline = true,
-  relativenumber = true,
 
   errorbells = false,
 
@@ -12,6 +19,7 @@ local options = {
   expandtab = true,
 
   smartindent = true,
+  smartcase = true,
 
   wrap = false,
 
@@ -26,7 +34,7 @@ local options = {
   colorcolumn = "80",
 
   wildmenu = true,
-  hlsearch = true
+  hlsearch = true,
 }
 
 for k, v in pairs(options) do
