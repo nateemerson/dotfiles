@@ -1,5 +1,10 @@
 -- Credit to @ThePrimeagen and @k1ng440
 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup()
+
 local options = {
   backup = false,
 

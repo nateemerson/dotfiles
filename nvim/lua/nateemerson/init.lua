@@ -1,3 +1,3 @@
+require("nateemerson.base")
 require("nateemerson.map")
-require("nateemerson.options")
 require("nateemerson.plugins")
