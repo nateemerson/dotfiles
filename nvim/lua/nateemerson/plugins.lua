@@ -27,11 +27,18 @@ require('packer').startup(function(use)
   }
 
   use {
-    'kyazdani42/nvim-tree.lua',
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
     requires = {
+      'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
-    },
-    tag = 'nightly'
+      'MunifTanjim/nui.nvim',
+    }
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 
 
