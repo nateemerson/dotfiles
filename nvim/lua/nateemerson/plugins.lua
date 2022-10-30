@@ -7,6 +7,8 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
+  local plenary = 'nvim-lua/plenary.nvim'
+  use(plenary)
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
 
@@ -21,25 +23,21 @@ require('packer').startup(function(use)
     run = function () require('nvim-treesitter.install').update({ with_sync = true}) end,
   }
 
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  use { 'ThePrimeagen/harpoon', requires = plenary }
+  use { 'nvim-lualine/lualine.nvim', requires = plenary }
+  use { 'TimUntersberger/neogit', requires = plenary }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = plenary }
 
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
     requires = {
-      'nvim-lua/plenary.nvim',
+      plen,
       'kyazdani42/nvim-web-devicons',
       'MunifTanjim/nui.nvim',
     }
   }
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
 
 
 end)
