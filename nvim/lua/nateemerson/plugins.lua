@@ -47,6 +47,10 @@ require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = plenary }
   use { 'TimUntersberger/neogit', requires = plenary }
   use { 'nvim-telescope/telescope.nvim', requires = plenary }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
 
