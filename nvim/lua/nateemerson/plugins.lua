@@ -18,7 +18,8 @@ require('packer').startup(function(use)
   local plenary = 'nvim-lua/plenary.nvim'
   use(plenary)
   use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
   use 'tiagovla/tokyodark.nvim'
 
@@ -32,6 +33,11 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+
+  -- LSP
+  use 'neovim/nvim-lspconfig'
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
