@@ -1,0 +1,2 @@
+#!/bin/zsh
+exec "$HOME/.local/bin/lua-language-server/bin/lua-language-server" "$@"
