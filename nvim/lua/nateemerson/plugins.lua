@@ -46,13 +46,15 @@ require('packer').startup(function(use)
   use { 'ThePrimeagen/harpoon', requires = plenary }
   use { 'nvim-lualine/lualine.nvim', requires = plenary }
   use { 'TimUntersberger/neogit', requires = plenary }
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = plenary }
+  use { 'nvim-telescope/telescope.nvim', requires = plenary }
+
+  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
 
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
     requires = {
-      plen,
+      plenary,
       'kyazdani42/nvim-web-devicons',
       'MunifTanjim/nui.nvim',
     }
