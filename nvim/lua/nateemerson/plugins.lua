@@ -59,8 +59,4 @@ require('packer').startup(function(use)
       'MunifTanjim/nui.nvim',
     }
   }
-
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
 end)
