@@ -16,7 +16,6 @@ local options = {
   nu = true,
   rnu = true,
   cursorline = true,
-  guicursor = "",
 
   errorbells = false,
 
