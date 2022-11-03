@@ -6,40 +6,63 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
+-- Autocommand that syncs packer whenever you save this file.
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
+
 require('packer').startup(function(use)
+  -- neovim "core" stuff
+  local plenary = 'nvim-lua/plenary.nvim'
+  use(plenary)
   use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'windwp/nvim-autopairs'
 
+  -- Colors and UI
   use 'tiagovla/tokyodark.nvim'
+  use 'tjdevries/colorbuddy.vim'
+  use { 'ThePrimeagen/harpoon', requires = plenary }
+  use { 'nvim-lualine/lualine.nvim', requires = plenary }
+  use { 'TimUntersberger/neogit', requires = plenary }
+  use { 'nvim-telescope/telescope.nvim', requires = plenary }
 
-  use 'princejoogie/tailwind-highlight.nvim'
-
-  use {'tjdevries/colorbuddy.vim'}
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function () require('nvim-treesitter.install').update({ with_sync = true}) end,
-  }
-
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
+  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
     requires = {
-      'nvim-lua/plenary.nvim',
+      plenary,
       'kyazdani42/nvim-web-devicons',
       'MunifTanjim/nui.nvim',
     }
   }
 
+  -- CMP
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+
+  -- LSP & Treesitter
+  use 'neovim/nvim-lspconfig'
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
   }
 
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
 
+
+  -- webdev
+  use 'princejoogie/tailwind-highlight.nvim'
 end)
