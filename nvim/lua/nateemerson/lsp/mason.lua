@@ -2,6 +2,8 @@ local servers = {
   "sumneko_lua",
   "tsserver",
   "jsonls",
+  "tailwindcss",
+  "astro"
 }
 
 local settings = {
