@@ -1,5 +1,5 @@
 local neogit = require('neogit')
-local nnoremap = require('nateemerson.map').nnoremap
+local nnoremap = require('nateemerson.keymaps').nnoremap
 
 neogit.setup {}
 
