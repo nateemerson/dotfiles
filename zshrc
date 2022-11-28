@@ -6,9 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # load custom executable functions
-# for function in ~/.zsh/functions/*; do
-#   source $function
-# done
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
 
 
