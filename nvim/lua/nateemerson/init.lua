@@ -1,5 +1,5 @@
 require("nateemerson.base")
-require("nateemerson.map")
+require("nateemerson.keymaps")
 require("nateemerson.plugins")
 require("nateemerson.mason")
 require("nateemerson.neogit")
