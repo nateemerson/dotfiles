@@ -35,7 +35,13 @@ M.nnoremap("<leader><C-p>", ":Telescope buffers<CR>")
 M.nnoremap("<leader>fh", ":Telescope help_tags<CR>")
 M.nnoremap("<leader>fr", ":Telescope lsp_references<CR>")
 M.nnoremap("<leader>fd", ":Telescope lsp_definitions<CR>")
-M.nnoremap("<C-f>", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({previewer = false, sorting_strategy = 'ascending', prompt_position = 'top' }))<CR>")
 
+M.nnoremap("<leader>d", "<cmd>lua require'telescope.builtin'.diagnostics<CR>")
+-- M.nnoremap("<C-f>", ":Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>")
+M.nnoremap("<C-f>", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({previewer = false, sorting_strategy = 'ascending', prompt_position = 'top' }))<CR>")
+-- M.nnoremap("<C-f>", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({previewer = false, sorting_strategy = 'ascending', prompt_position = 'top' }))<CR>")
+-- M.nnoremap("<C-f>", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find({previewer = false, sorting_strategy = ascending, prompt_position = top })<CR>")
+M.nnoremap("<C-d>", "<C-d>zz")
+M.nnoremap("<C-u>", "<C-u>zz")
 
 return M

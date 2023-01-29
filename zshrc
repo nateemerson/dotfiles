@@ -21,6 +21,19 @@ antigen theme romkatv/powerlevel10k
 # Syntax highlighting supposed to go at the end
 antigen apply
 
+# Autosuggest config
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
+ #COMPLETION SETTINGS
+# Via (https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/)
+# add custom completion scripts
+fpath=($fpath ~/.zsh/completion)
+
+export PATH=~/.bin:$PATH:/usr/local/go/bin
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
+export XDG_CONFIG_HOME=~/.config
+
 # Tmuxinator completion
 # source ~/.bin/tmuxinator.zsh
 
