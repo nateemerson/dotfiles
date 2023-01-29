@@ -12,13 +12,13 @@ done
 
 
 
-source ~/.bin/antigen.zsh
+source ~/.local/bin/antigen.zsh
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme romkatv/powerlevel10k
-export ZSH_THEME="powerlevel10k/powerlevel10k"
-# Syntax highlighting supposed to go at the end
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme romkatv/powerlevel10k
+# Syntax highlighting supposed to go at the end
 antigen apply
 
 # Autosuggest config
@@ -29,7 +29,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 # add custom completion scripts
 fpath=($fpath ~/.zsh/completion)
 
-export PATH=~/.bin:$PATH
+export PATH=~/.bin:$PATH:/usr/local/go/bin
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export XDG_CONFIG_HOME=~/.config
@@ -38,14 +38,14 @@ export XDG_CONFIG_HOME=~/.config
 # source ~/.bin/tmuxinator.zsh
 
 # compsys initialization
-autoload -U compinit
-compinit
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# autoload -U compinit
+# compinit
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias vim=nvim
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
