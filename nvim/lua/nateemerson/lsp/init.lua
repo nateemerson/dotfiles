@@ -3,4 +3,6 @@ if not status_ok then
   return
 end
 require("nateemerson.lsp.mason")
+require("nateemerson.lsp.null-ls")
+require("nateemerson.lsp.prettier")
 require("nateemerson.lsp.handlers").setup()
