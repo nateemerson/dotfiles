@@ -6,10 +6,11 @@ ts.setup {
   highlight = {
     enable = true,
     disable = {},
+    additional_vim_regex_highlighting = true,
   },
   indent = {
     enable = true,
-    disable = {},
+    disable = { "yaml" },
   },
   ensure_installed = {
     "tsx",

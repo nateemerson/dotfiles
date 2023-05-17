@@ -26,8 +26,6 @@ M.nnoremap("<C-k>", "<C-w>k")
 M.nnoremap("<C-l>", "<C-w>l")
 M.nnoremap("<C-h>", "<C-w>h")
 M.nnoremap("<leader>r", ":so %<CR>")
-M.nnoremap("<C-E>", ":Neotree show toggle=true<CR>")
-M.nnoremap("<C-G>", ":Neotree float git_status toggle=true<CR>")
 
 M.nnoremap("<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<CR>")
 M.nnoremap("<leader>lg", ":Telescope live_grep<CR>")
