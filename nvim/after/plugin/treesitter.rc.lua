@@ -23,7 +23,8 @@ ts.setup {
     "lua",
     "markdown",
     "astro",
-    "vue"
+    "vue",
+    "go"
   },
   autotag = {
     enable = true,

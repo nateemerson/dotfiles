@@ -3,7 +3,8 @@ local servers = {
   "tsserver",
   "jsonls",
   "astro",
-  "volar"
+  "volar",
+  "gopls"
 }
 
 local settings = {

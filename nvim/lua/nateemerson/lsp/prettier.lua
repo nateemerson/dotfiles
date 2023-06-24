@@ -16,5 +16,6 @@ prettier.setup({
     "typescriptreact",
     "vue",
     "yaml",
+    "go",
   },
 })

@@ -10,7 +10,8 @@ lsp.ensure_installed({
   'gopls',
   'tailwindcss',
   'astro',
-  'volar'
+  'volar',
+  'gopls'
 })
 
 -- Fix Undefined global 'vim'
