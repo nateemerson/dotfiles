@@ -14,6 +14,7 @@ ts.setup {
   },
   ensure_installed = {
     "tsx",
+    "typescript",
     "toml",
     "json",
     "yaml",
@@ -21,7 +22,8 @@ ts.setup {
     "html",
     "lua",
     "markdown",
-    "astro"
+    "astro",
+    "vue"
   },
   autotag = {
     enable = true,

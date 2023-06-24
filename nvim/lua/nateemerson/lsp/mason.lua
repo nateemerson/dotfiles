@@ -2,7 +2,8 @@ local servers = {
   "lua_ls",
   "tsserver",
   "jsonls",
-  "astro"
+  "astro",
+  "volar"
 }
 
 local settings = {
