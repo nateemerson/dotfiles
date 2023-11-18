@@ -28,7 +28,7 @@ M.nnoremap("<C-h>", "<C-w>h")
 M.nnoremap("<leader>r", ":so %<CR>")
 
 M.nnoremap("<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<CR>")
-M.nnoremap("<leader>lg", ":Telescope live_grep<CR>")
+-- M.nnoremap("<leader>lg", ":Telescope live_grep<CR>")
 M.nnoremap("<leader><C-p>", ":Telescope buffers<CR>")
 M.nnoremap("<leader>fh", ":Telescope help_tags<CR>")
 M.nnoremap("<leader>fr", ":Telescope lsp_references<CR>")

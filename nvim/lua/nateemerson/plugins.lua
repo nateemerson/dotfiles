@@ -64,7 +64,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lua'
 
   -- LSP & Treesitter
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'nvimtools/none-ls.nvim'
   use('MunifTanjim/prettier.nvim')
   use {
     "nvim-treesitter/nvim-treesitter",

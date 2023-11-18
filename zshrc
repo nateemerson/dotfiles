@@ -10,10 +10,9 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-
+# source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 source ~/.local/bin/antigen.zsh
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -59,3 +58,13 @@ esac
 # pnpm end
 
 eval "$(direnv hook zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_FEATURE_PNPM=1
+
+# bun completions
+[ -s "/Users/nate/.bun/_bun" ] && source "/Users/nate/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

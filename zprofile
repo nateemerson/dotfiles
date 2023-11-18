@@ -21,3 +21,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 VIM="nvim"
 export GIT_EDITOR=$VIM
 export DOTFILES=$HOME/Code/dotfiles
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
