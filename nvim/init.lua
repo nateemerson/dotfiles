@@ -336,9 +336,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+local customTelescopeSettings = require('custom.config.telescope')
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
+local telescopeSettings = vim.tbl_deep_extend('force', {
   defaults = {
     mappings = {
       i = {
@@ -347,8 +348,9 @@ require('telescope').setup {
       },
     },
   },
-}
+}, customTelescopeSettings)
 
+require('telescope').setup(telescopeSettings)
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
