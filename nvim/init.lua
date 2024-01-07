@@ -1,6 +1,24 @@
-require("nateemerson")
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = "1.0"
-vim.cmd("colorscheme tokyodark")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+
+require("base")
+
+require("lazy").setup("plugins")
+
+-- require("remaps")
+
+-- require('options')
+-- require('plugins')
+-- require('remaps')
