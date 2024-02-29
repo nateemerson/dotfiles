@@ -4,7 +4,8 @@ local servers = {
   "jsonls",
   "astro",
   "volar",
-  "gopls"
+  "gopls",
+  "biome"
 }
 
 local settings = {
