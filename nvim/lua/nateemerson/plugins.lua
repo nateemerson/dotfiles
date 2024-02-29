@@ -65,7 +65,6 @@ require('packer').startup(function(use)
 
   -- LSP & Treesitter
   use 'nvimtools/none-ls.nvim'
-  use('MunifTanjim/prettier.nvim')
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",

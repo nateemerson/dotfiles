@@ -4,5 +4,4 @@ if not status_ok then
 end
 require("nateemerson.lsp.mason")
 require("nateemerson.lsp.null-ls")
-require("nateemerson.lsp.prettier")
 require("nateemerson.lsp.handlers").setup()

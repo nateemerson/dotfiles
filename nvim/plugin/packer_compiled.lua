@@ -194,11 +194,6 @@ _G.packer_plugins = {
     path = "/Users/nate/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["prettier.nvim"] = {
-    loaded = true,
-    path = "/Users/nate/.local/share/nvim/site/pack/packer/start/prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
-  },
   ["tailwind-highlight.nvim"] = {
     loaded = true,
     path = "/Users/nate/.local/share/nvim/site/pack/packer/start/tailwind-highlight.nvim",
