@@ -1,7 +1,6 @@
 require("nateemerson.base")
 require("nateemerson.keymaps")
 require("nateemerson.plugins")
-require("nateemerson.mason")
 require("nateemerson.neogit")
 require("nateemerson.cmp")
 require("nateemerson.lsp")
