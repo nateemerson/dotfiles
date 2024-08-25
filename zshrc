@@ -68,3 +68,6 @@ export VOLTA_FEATURE_PNPM=1
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opam configuration
+[[ ! -r /Users/nate/.opam/opam-init/init.zsh ]] || source /Users/nate/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

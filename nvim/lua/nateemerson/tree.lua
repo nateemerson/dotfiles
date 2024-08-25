@@ -7,7 +7,7 @@ require'nvim-tree'.setup {
   },
   view = {
     float = {
-      enable = true
+      enable = true,
     }
   }
 }
