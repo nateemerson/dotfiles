@@ -1,6 +1,6 @@
 require("nateemerson.base")
 require("nateemerson.keymaps")
-require("nateemerson.plugins")
+require("config.lazy")  -- Load Lazy.nvim instead of Packer
 require("nateemerson.neogit")
 require("nateemerson.cmp")
 require("nateemerson.lsp")

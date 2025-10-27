@@ -1,12 +1,5 @@
-local servers = {
-  "lua_ls",
-  "tsserver",
-  "jsonls",
-  "astro",
-  "volar",
-  "gopls",
-  "biome"
-}
+-- Mason UI settings only
+-- Server installation and configuration is handled by lsp-zero in after/plugin/lsp.lua
 
 local settings = {
   ui = {
@@ -22,30 +15,6 @@ local settings = {
 }
 
 require("mason").setup(settings)
-require("mason-lspconfig").setup({
-  ensure_installed = servers,
-  -- automatic_installation = true, -- causing mason to popup every open
-})
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  return
-end
-
-local opts = {}
-
-for _, server in pairs(servers) do
-  opts = {
-    on_attach = require("nateemerson.lsp.handlers").on_attach,
-    capabilities = require("nateemerson.lsp.handlers").capabilities,
-  }
-
-  server = vim.split(server, "@")[1]
-
-  local require_ok, conf_opts = pcall(require, "nateemerson.lsp.settings." .. server)
-  if require_ok then
-    opts = vim.tbl_deep_extend("force", conf_opts, opts)
-  end
-
-  lspconfig[server].setup(opts)
-end
+-- Note: Server installation is managed by lsp-zero.ensure_installed() in after/plugin/lsp.lua
+-- This avoids conflicts and deprecated API usage

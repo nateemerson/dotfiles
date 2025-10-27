@@ -3,20 +3,17 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
+  'ts_ls',
   'eslint',
   'rust_analyzer',
   'lua_ls',
   'gopls',
   'tailwindcss',
   'astro',
-  'volar',
-  'gopls'
+  'vue_ls',  -- Vue language server (formerly volar)
 })
 
 -- Fix Undefined global 'vim'
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
 lsp.configure('lua_ls', {
     settings = {
         Lua = {
@@ -70,9 +67,10 @@ lsp.on_attach(function(client, bufnr)
 --  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-require'lspconfig'.biome.setup{}
-
 lsp.setup()
+
+-- Configure biome LSP separately (not part of lsp-zero managed servers)
+lsp.configure('biome', {})
 
 vim.diagnostic.config({
     virtual_text = true
