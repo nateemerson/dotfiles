@@ -2,23 +2,20 @@ local M = {}
 
 -- TODO: backfill this to template
 M.setup = function()
+  -- Use modern diagnostic signs configuration (Neovim 0.11+)
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    Error = "",
+    Warn = "",
+    Hint = "",
+    Info = "",
   }
-
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
 
   local config = {
     -- disable virtual text
     virtual_text = false,
-    -- show signs
+    -- show signs with modern API
     signs = {
-      active = signs,
+      text = signs,
     },
     update_in_insert = true,
     underline = true,
@@ -85,7 +82,8 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
+  -- Update client name check for renamed TypeScript server
+  if client.name == "ts_ls" or client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
   end
   lsp_keymaps(bufnr)
